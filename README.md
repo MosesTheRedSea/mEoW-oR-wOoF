@@ -52,8 +52,16 @@ Activate The Virtual Python Environment
  source .venv/bin/activate
  ```
 
-## Running Models
+## Running the Model
+
+### Locally
 
   ```sh
   python train.py
   ```
+
+### Cluster 
+Edit the train.sh file
+```sh
+sbatch train.sh
+```
