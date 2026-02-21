@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "my_project"
+version = "0.1.0"
+description = "Cat-V-Dog-Logistic-Regression"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [
+    { name = "Moses Adewolu", email = "MosesOluwatobiAdewolu@gmail.com" }
+]
+
+dependencies = [
+    "numpy",
+    "scipy",
+    "matplotlib",
+    "h5py",
+    "pillow"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "black",
+    "flake8",
+    "ipython"
+]
+
+[tool.setuptools]
+package-dir = { "" = "/home/moses/Moses/Research/Machine-Learning/Logistic_Regression" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
