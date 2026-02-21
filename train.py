@@ -8,9 +8,6 @@ from scipy import ndimage
 from utils.lr_utils import load_dataset
 from utils.helper import *
 
-
-# GRADED FUNCTION: model
-
 def model(X_train, Y_train, X_test, num_iterations=2000, learning_rate=0.5, print_cost=False):
 
     dim = X_train.shape[0]

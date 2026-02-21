@@ -1,6 +1,7 @@
 import copy
 import math
 import numpy as np
+from tqdm.auto import trange
 
 def sigmoid(z):
     return 1/ (1+np.exp(-z))
@@ -25,7 +26,7 @@ def optimize(w, b, X, Y, num_iterations=100, learning_rate=0.009, print_cost=Fal
     w = copy.deepcopy(w)
     b = copy.deepcopy(b)
     costs = []
-    for i in range(num_iterations):
+    for i in trange(num_iterations, desc="Training", unit="iter"):
         grads, cost = propagate(w, b, X, Y)
         # Retrieve derivatives from grads
         dw = grads["dw"]

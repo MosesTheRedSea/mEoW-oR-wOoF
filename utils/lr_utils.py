@@ -2,7 +2,7 @@ import os
 import h5py
 import numpy as np
 from PIL import Image
-
+from tqdm.auto import tqdm
 
 def parse_train_dataset(directory, img_size=64, max_num_=None):
     files = [f for f in os.listdir(directory) if f.lower().endswith(".jpg")]
@@ -13,7 +13,7 @@ def parse_train_dataset(directory, img_size=64, max_num_=None):
 
     X, Y = [], []
 
-    for file in files:
+    for file in tqdm(files, desc="Loading train images", unit="img"):
         if file.startswith("cat."):
             y = 0
         elif file.startswith("dog."):
@@ -47,7 +47,7 @@ def parse_test_dataset(directory, img_size=64, max_num_=None):
 
     X, ids = [], []
 
-    for file in files:
+    for file in tqdm(files, desc="Loading test images", unit="img"):
         ids.append(int(os.path.splitext(file)[0]))
         image = Image.open(os.path.join(directory, file)).convert("RGB")
         image = image.resize((img_size, img_size))
