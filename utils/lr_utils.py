@@ -35,7 +35,6 @@ def parse_train_dataset(directory, img_size=64, max_num_=None):
 
     return X, Y, classes
 
-
 def parse_test_dataset(directory, img_size=64, max_num_=None):
     files = [f for f in os.listdir(directory) if f.lower().endswith(".jpg")]
 
@@ -58,8 +57,6 @@ def parse_test_dataset(directory, img_size=64, max_num_=None):
 
     X = np.stack(X, axis=0)
     return X, np.array(ids)
-
-    
 
 def load_dataset(train_directory, test_directory, img_size=64, max_train=None, max_test=None):
 

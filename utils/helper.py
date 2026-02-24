@@ -26,6 +26,8 @@ def optimize(w, b, X, Y, num_iterations=100, learning_rate=0.009, print_cost=Fal
     w = copy.deepcopy(w)
     b = copy.deepcopy(b)
     costs = []
+    accuracies = []
+
     for i in trange(num_iterations, desc="Training", unit="iter"):
         grads, cost = propagate(w, b, X, Y)
         # Retrieve derivatives from grads
@@ -33,15 +35,24 @@ def optimize(w, b, X, Y, num_iterations=100, learning_rate=0.009, print_cost=Fal
         db = grads["db"]
         w = w - learning_rate * dw
         b = b - learning_rate * db
+
+        # Predictions for Accuracy
+        A = sigmoid(np.dot(w.T, X) + b)
+        preds = (A > 0.5).astype(int)
+
+        accuracy = 100 - np.mean(np.abs(preds - Y)) * 100
+
         # Record the costs
         if i % 100 == 0:
             costs.append(cost)
+            accuracies.append(accuracy)
             # Print the cost every 100 training iterations
             if print_cost:
-                print ("Cost after iteration %i: %f" %(i, cost))
+                print(f"Iter {i:5d} | Loss: {cost:.4f} | Acc: {accuracy:.2f}%")
+
     params = {"w": w, "b": b}
     grads = {"dw": dw, "db": db}
-    return params, grads, costs
+    return params, grads, costs, accuracies
 
 def predict(w, b, X):
     m = X.shape[1]
@@ -54,3 +65,4 @@ def predict(w, b, X):
         else:
             Y_prediction[0, i] = 0
     return Y_prediction
+
