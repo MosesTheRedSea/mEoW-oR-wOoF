@@ -28,7 +28,8 @@ This project focuses on building a strong foundational understanding of machine 
 - [`mEoW-oR-wOoF.jpg`](https://github.com/MosesTheRedSea/mEoW-oR-wOoF/blob/main/mEoW-oR-wOoF.jpg) – Project image used for documentation or demonstration.
 - [`pyproject.toml`](https://github.com/MosesTheRedSea/mEoW-oR-wOoF/blob/main/pyproject.toml) – Project configuration and dependency definitions.
 - [`README.md`](https://github.com/MosesTheRedSea/mEoW-oR-wOoF/blob/main/README.md) – Main documentation and usage instructions.
-- [`train.py`](https://github.com/MosesTheRedSea/mEoW-oR-wOoF/blob/main/train.py) – Main training script for the logistic regression model.
+- [`train.py`](https://github.com/MosesTheRedSea/mEoW-oR-wOoF/blob/main/train.py) – Main training script for the logistic regression model | Local
+- ['train.sh'](https://github.com/MosesTheRedSea/mEoW-oR-wOoF/blob/main/train.sh) - Main training script for logistic regression model | Cluster
 - [`utils/`](https://github.com/MosesTheRedSea/mEoW-oR-wOoF/tree/main/utils) – Helper modules used throughout training and evaluation.
   - [`helper.py`](https://github.com/MosesTheRedSea/mEoW-oR-wOoF/blob/main/utils/helper.py) – Utility functions for data handling and preprocessing.
   - [`lr_utils.py`](https://github.com/MosesTheRedSea/mEoW-oR-wOoF/blob/main/utils/lr_utils.py) – Logistic regression helper functions.
