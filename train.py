@@ -80,7 +80,7 @@ if __name__ == '__main__':
 
     plt.imshow(train_X[index])
     
-    print ("\n y = " + str(train_Y[:, index]) + ", it's a '" + classes[np.squeeze(train_Y[:, index])].decode("utf-8") +  "' picture.")
+    print ("\ny = " + str(train_Y[:, index]) + ", it's a '" + classes[np.squeeze(train_Y[:, index])].decode("utf-8") +  "' picture.")
 
     m_train = train_X.shape[0]
     m_test = test_X.shape[0]
@@ -89,7 +89,7 @@ if __name__ == '__main__':
     print ("Number of training examples: m_train = " + str(m_train))
     print ("Number of testing examples: m_test = " + str(m_test))
     print ("Height/Width of each image: num_px = " + str(num_px))
-    print ("Each image is of size: (" + str(num_px) + ", " + str(num_px) + ", 3")
+    print ("Each image is of size: (" + str(num_px) + ", " + str(num_px) + ", 3)")
 
     print ("train_set_x shape: " + str(train_X.shape))
     print ("train_set_y shape: " + str(train_Y.shape))
@@ -110,12 +110,12 @@ if __name__ == '__main__':
     train_X = train_X_flatten / 255
     test_X = test_X_flatten / 255
 
-    logistic_regression_model = model(train_X, train_Y, test_X, num_iterations=10000, learning_rate=0.005, print_cost=True)
+    logistic_regression_model = model(train_X, train_Y, test_X, num_iterations=50000, learning_rate=0.01, print_cost=True)
 
     costs = np.squeeze(logistic_regression_model['costs'])
     accuracies = np.squeeze(logistic_regression_model['accuracies'])
 
-    run_dir = save_run_outputs("outputs/runs")
+    run_dir = save_run_outputs("outputs/runs", costs, accuracies)
     save_loss_plot(costs, run_dir)
     save_accuracy_plot(accuracies, run_dir)
     print("Saving run to:", run_dir)
@@ -125,9 +125,3 @@ if __name__ == '__main__':
     # plt.xlabel('iterations (per hundreds)')
     # plt.title("Learning rate =" + str(logistic_regression_model["learning_rate"]))
     # plt.show()
-
-
-
-
-    
-    

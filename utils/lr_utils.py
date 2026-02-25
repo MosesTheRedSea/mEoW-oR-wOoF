@@ -67,4 +67,3 @@ def load_dataset(train_directory, test_directory, img_size=64, max_train=None, m
     test_Y = None  # Kaggle test has no labels
 
     return train_X, train_Y, test_X, test_Y, classes, test_ids
-    

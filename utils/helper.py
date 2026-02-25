@@ -65,4 +65,3 @@ def predict(w, b, X):
         else:
             Y_prediction[0, i] = 0
     return Y_prediction
-

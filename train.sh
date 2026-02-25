@@ -1,8 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=cat-dog-logistic-regression
-#SBATCH -t 02:00:00
-#SBATCH --output=train_%j.out
-#SBATCH --error=train_%j.err
+#SBATCH -t 08:00:00
 #SBATCH -n 1
 #SBATCH -N 1
 #SBATCH --cpus-per-task=8
